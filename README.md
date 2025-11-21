@@ -11,4 +11,34 @@ It is recommended to download the FSD50K dataset locally using db_download.ipynb
 
 **Running**
 
-Running the entire base_classifier.ipynb will rebuild, retrain, and evaluate the model, and fsd50k_cnn.h5 is the trained CNN classifier. If you don't want to retrain the model and only want to evaluate it, only run the Evaluation Scores and Prediction code blocks at the bottom of base_classifier.ipynb.
+Running the entire base_classifier.ipynb will rebuild, retrain, and evaluate the model. The file fsd50k_cnn.h5 is the trained CNN classifier, as it is included in this repository you may download and evaluate it directly if you wish to avoid spending a signigicant amount of time training the model.
+
+**Important Notes About Running base_classifier.ipynb**
+
+Most of the code blocks in base_classifier.ipynb must be executed at least once per session to load essential variables, preprocessing functions, datasets, and the model architecture into memory.
+
+Only the block directly under the “Training Model” markdown performs the actual time-consuming model training and may be skipped.
+All earlier blocks define:
+
+- dataset paths
+- label encodings
+- preprocessing functions
+- TensorFlow datasets
+- model architecture
+- custom metrics
+- cached mel-spectrogram loading logic
+
+These components must be initialized in the current Python session before you can load or evaluate the model.
+
+**If you want to rebuild and retrain the model**
+
+Simply run all cells in order, including the “Training Model” section.
+
+**If you want to skip retraining and only evaluate the model**
+
+Do the following:
+
+Run every code block except the one under “Training Model”.
+These blocks restore all session variables and load cached mel-spectrograms.
+
+Then run the Evaluation Scores and Prediction sections at the end of the notebook. The prediction sections may be rerun with different WAV file paths if you wish to classify other samples.
