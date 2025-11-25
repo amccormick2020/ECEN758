@@ -11,7 +11,7 @@ It is recommended to download the FSD50K dataset locally using db_download.ipynb
 
 **Running**
 
-Running the entire base_classifier.ipynb will rebuild, retrain, and evaluate the model. The file fsd50k_cnn.h5 is the trained CNN classifier, as it is included in this repository you may download and evaluate it directly if you wish to avoid spending a signigicant amount of time training the model.
+Running the entire base_classifier.ipynb will rebuild, retrain, and evaluate the model. The file fsd50k_cnn.h5 is the trained CNN classifier, as it is included in this repository you may download and evaluate it directly if you wish to avoid spending a significant amount of time training the model.
 
 **Important Notes About Running base_classifier.ipynb**
 
